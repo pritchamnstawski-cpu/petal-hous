@@ -46,3 +46,41 @@
     display: block;
 }
 
+/* Elegant PETAL HOUSE product cards */
+
+.product {
+    background: #ffffff;
+    border: 1px solid #e8e4dc;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product h3 {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    color: #49483f;
+    margin: 18px 0 10px;
+}
+
+.product p {
+    color: #77766d;
+    line-height: 1.6;
+}
+
+.product .price {
+    color: #737b68;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+@media (max-width: 650px) {
+    .products {
+        grid-template-columns: 1fr;
+    }
+}
+

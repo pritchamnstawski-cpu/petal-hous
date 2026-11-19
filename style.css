@@ -1,0 +1,98 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background-color: #FAF8F4;
+    color: #45443F;
+    line-height: 1.7;
+}
+
+header {
+    background-color: #FFFFFF;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    font-size: 32px;
+    letter-spacing: 6px;
+    font-weight: normal;
+}
+
+header p {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #929080;
+    margin: 8px 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #45443F;
+    margin: 12px;
+    font-size: 14px;
+}
+
+.hero {
+    background-color: #EAE8DF;
+    text-align: center;
+    padding: 110px 20px;
+}
+
+.hero h2 {
+    font-size: 38px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #737B68;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    margin-top: 25px;
+}
+
+section {
+    padding: 65px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.product {
+    background: white;
+    padding: 30px;
+    width: 260px;
+    border: 1px solid #E8E4DB;
+}
+
+.product h3 {
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+footer {
+    background-color: #EAE8DF;
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+  }

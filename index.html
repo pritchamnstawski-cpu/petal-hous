@@ -2,106 +2,501 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PETAL HOUSE | Flower Boutique</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PETAL HOUSE — Floral Boutique</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap');
+
+:root {
+    --cream: #f8f5ef;
+    --white: #fffdf9;
+    --green: #52634f;
+    --pink: #e9d4ce;
+    --text: #353b32;
+    --muted: #85877d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background: var(--white);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    letter-spacing: 4px;
+    color: var(--green);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover {
+    color: #b58e82;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 650px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 60px 8%;
+    gap: 50px;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.eyebrow {
+    color: #a58b7b;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(45px, 6vw, 78px);
+    line-height: 1.08;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.hero h1 em {
+    color: #a58b7b;
+    font-weight: 400;
+}
+
+.hero-text p {
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: 14px;
+    max-width: 380px;
+    margin-bottom: 35px;
+}
+
+.main-button {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    padding: 16px 30px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    background: #374635;
+}
+
+.hero-image {
+    height: 520px;
+    background:
+        url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200")
+        center/cover;
+}
+
+/* INTRO */
+
+.intro {
+    text-align: center;
+    padding: 100px 20px;
+    background: var(--white);
+}
+
+.intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    color: var(--muted);
+    max-width: 550px;
+    margin: auto;
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+/* COLLECTION */
+
+.collection {
+    padding: 100px 8%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 45px;
+    gap: 20px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 400;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product {
+    background: var(--white);
+    padding-bottom: 25px;
+    transition: 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-6px);
+}
+
+.product img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    padding: 25px 22px 0;
+}
+
+.product h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.product-description {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 18px;
+}
+
+.product-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    color: var(--green);
+    font-size: 16px;
+}
+
+.order-link {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--green);
+    padding-bottom: 4px;
+}
+
+/* STORY */
+
+.story {
+    background: var(--pink);
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.story h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: clamp(35px, 5vw, 58px);
+    margin-bottom: 25px;
+}
+
+.story p {
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.9;
+    color: #655b55;
+    font-size: 14px;
+}
+
+/* CONTACT */
+
+.contact {
+    padding: 100px 20px;
+    text-align: center;
+    background: var(--white);
+}
+
+.contact h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 5vw, 55px);
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--green);
+    color: white;
+    padding: 35px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 50px 7%;
+    }
+
+    .hero-image {
+        height: 380px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .product img {
+        height: 400px;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <nav class="navbar">
-            <h1 class="logo">PETAL HOUSE</h1>
+<header>
+    <nav class="navbar">
+        <a href="#home" class="logo">PETAL HOUSE</a>
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Our Story</a></li>
-                <li><a href="#products">Flowers</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <p class="subtitle">A FLOWER BOUTIQUE</p>
-            <h2>A little beauty<br>in every bloom.</h2>
-            <p>Beautiful flowers for your most meaningful moments.</p>
-            <a href="#products" class="button">Explore Our Collection</a>
-        </div>
-    </section>
+<section class="hero" id="home">
+    <div class="hero-text">
+        <p class="eyebrow">A floral boutique</p>
 
-    <section id="about" class="about">
-        <p class="section-label">OUR STORY</p>
-        <h2>Flowers that speak from the heart.</h2>
+        <h1>Flowers for<br>
+        life's <em>beautiful</em><br>
+        moments.</h1>
+
         <p>
-            Welcome to PETAL HOUSE, a flower boutique dedicated
-            to creating beautiful floral arrangements.
-            We bring happiness to every special moment through flowers.
-            Visit our collection and find the perfect bouquet
-            for someone you love.
-        </p>
-    </section>
-
-    <section id="products" class="collection">
-        <p class="section-label">OUR COLLECTION</p>
-        <h2>Find your perfect bouquet</h2>
-        <p class="collection-intro">
-            Discover our selection of beautiful flowers.
+            Thoughtfully arranged blooms to celebrate love,
+            friendship and every little moment worth remembering.
         </p>
 
-        <div class="products">
+        <a href="#collection" class="main-button">
+            Discover the collection
+        </a>
+    </div>
 
-            <div class="product">
-                <img
-                    src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=700"
-                    alt="Beautiful rose bouquet">
+    <div class="hero-image"></div>
+</section>
 
+<section class="intro">
+    <p class="eyebrow">Welcome to Petal House</p>
+
+    <h2>A little beauty in every bloom.</h2>
+
+    <p>
+        We believe flowers have a beautiful way of saying
+        what words sometimes cannot. Every bouquet is created
+        to bring a little more beauty into your everyday life.
+    </p>
+</section>
+
+<section class="collection" id="collection">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">Made with love</p>
+            <h2>Our flower collection</h2>
+        </div>
+
+        <p>Find the bouquet that speaks to you.</p>
+    </div>
+
+    <div class="products">
+
+        <div class="product">
+            <img
+                src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800"
+                alt="Rose bouquet">
+
+            <div class="product-info">
                 <h3>Rose Bouquet</h3>
-                <p>Elegant flowers for special occasions.</p>
-                <p class="price">฿590</p>
-                <a href="#contact" class="order-btn">Order Now</a>
+                <p class="product-description">
+                    A timeless expression of love.
+                </p>
+
+                <div class="product-bottom">
+                    <span class="price">฿590</span>
+                    <a href="#contact" class="order-link">Order now ↗</a>
+                </div>
             </div>
-
-            <div class="product">
-                <img
-                    src="https://images.unsplash.com/photo-1520763185298-1b434c919102?w=700"
-                    alt="Beautiful tulip flowers">
-
-                <h3>Tulip Bouquet</h3>
-                <p>Simple and timeless floral beauty.</p>
-                <p class="price">฿690</p>
-                <a href="#contact" class="order-btn">Order Now</a>
-            </div>
-
-            <div class="product">
-                <img
-                    src="https://images.unsplash.com/photo-1597848212624-2c7b8b8b6e8f?w=700"
-                    alt="Fresh sunflower bouquet">
-
-                <h3>Sunflower Bouquet</h3>
-                <p>Bright flowers full of happiness.</p>
-                <p class="price">฿490</p>
-                <a href="#contact" class="order-btn">Order Now</a>
-            </div>
-
         </div>
-    </section>
 
-    <section id="contact" class="contact">
-        <p class="section-label">GET IN TOUCH</p>
-        <h2>Make someone's day beautiful.</h2>
-        <p>
-            We would love to make your special moments beautiful.
-            Contact PETAL HOUSE for flower orders and enquiries.
-        </p>
-        <a href="#home" class="button">Back to Home</a>
-    </section>
+        <div class="product">
+            <img
+                src="https://images.unsplash.com/photo-1520763185298-1b434c919102?w=800"
+                alt="Tulip bouquet">
 
-    <footer>
-        <p>© 2026 PETAL HOUSE</p>
-        <p>A little beauty in every bloom.</p>
-    </footer>
+            <div class="product-info">
+                <h3>Tulip Bouquet</h3>
+                <p class="product-description">
+                    Soft, elegant and effortlessly beautiful.
+                </p>
+
+                <div class="product-bottom">
+                    <span class="price">฿690</span>
+                    <a href="#contact" class="order-link">Order now ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img
+                src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=800"
+                alt="Sunflower bouquet">
+
+            <div class="product-info">
+                <h3>Sunflower Bouquet</h3>
+                <p class="product-description">
+                    A little sunshine, wrapped with care.
+                </p>
+
+                <div class="product-bottom">
+                    <span class="price">฿490</span>
+                    <a href="#contact" class="order-link">Order now ↗</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="story" id="story">
+    <p class="eyebrow">The heart of our boutique</p>
+
+    <h2>Beauty in the<br>little things.</h2>
+
+    <p>
+        PETAL HOUSE is a floral boutique inspired by simplicity,
+        nature and meaningful moments. We carefully select
+        beautiful flowers and create arrangements that feel
+        personal, thoughtful and unforgettable.
+    </p>
+</section>
+
+<section class="contact" id="contact">
+    <p class="eyebrow">Let's make someone smile</p>
+
+    <h2>Send a little love.</h2>
+
+    <p>
+        Have a special occasion or a bouquet in mind?
+        We would love to hear from you.
+    </p>
+
+    <a href="#home" class="main-button">Back to the top</a>
+</section>
+
+<footer>
+    <p>PETAL HOUSE</p>
+    <p>A little beauty in every bloom.</p>
+    <p>© 2026 PETAL HOUSE</p>
+</footer>
 
 </body>
 </html>
